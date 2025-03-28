@@ -21,7 +21,8 @@ const Signup: React.FC = () => {
     }));
   };
 
-  const handleCreateAccount = () => {
+  const handleCreateAccount = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     // Add account creation logic here
     navigate("/login");
   };
@@ -34,7 +35,7 @@ const Signup: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="flex flex-col justify-between p-6 bg-white max-w-sm"
       >
-        <form onSubmit={handleCreateAccount}>
+        <form onSubmit={(e)=>handleCreateAccount(e)}>
           <div>
             <div className="mb-8">
               <h1 className="text-2xl font-bold mb-2">
